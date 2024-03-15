@@ -17,6 +17,13 @@ const Login =() => {
             window.location.href='/main'
         } else {alert('❎일치하는 정보가 없습니다.❎') }
     }
+
+    const handleKeyDown = (event) =>{
+        console.log(event)
+        if (event.key==='Enter' ){
+            onClickLogin()
+        }
+    }
     
 
     return(
@@ -32,8 +39,8 @@ const Login =() => {
                     <label htmlFor='input_pw'>PW: </label>
                 </div>
                 <div style={{display:'flex', flexDirection:'column'}}>
-                    <input type='text' name='input_id' value={inputId} onChange={handleInputId} />
-                    <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
+                    <input type='text' name='input_id' value={inputId} onChange={handleInputId} onKeyDown={handleKeyDown} />
+                    <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} onKeyDown={handleKeyDown} />
                 </div>
             </div>
             <div>
