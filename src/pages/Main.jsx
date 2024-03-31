@@ -1,5 +1,11 @@
 
+import { Map, useKakaoLoader } from "react-kakao-maps-sdk";
+
 const Main = () => {
+    const [ loading, error ] = useKakaoLoader({
+        appkey: "4cdbb12f4a045b879605cdd988a9803c", 
+      })
+
     return (
         <><div>
             <h1>승권이가 추천하는 안양 맛집 정보</h1>
@@ -34,8 +40,13 @@ const Main = () => {
                 <li>👑Top 3👑 파랑새야</li>
             </ul>
         </div>
-            <div style={{  position: 'fixed', top: 70, right: -100}}>
-                <img src='/images/anyang-map.jpg' alt='Anyang Map' style={{ width: '70%' }} />
+            <div style={{  position: 'fixed', top: 70, right: 100}}>
+            <Map
+                center={{ lat:  37.3942527, lng: 126.9568209 }}   // 지도의 중심 좌표
+                style={{ width: '600px', height: '500px' }} // 지도 크기
+                level={3}                                   // 지도 확대 레벨
+            >
+            </Map>
             </div>
         </>
 
