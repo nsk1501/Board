@@ -1,7 +1,7 @@
 
 const Main = () => {
     return (
-        <div>
+        <><div>
             <h1>승권이가 추천하는 안양 맛집 정보</h1>
             <h2>한식</h2>
             <ul>
@@ -34,6 +34,11 @@ const Main = () => {
                 <li>👑Top 3👑 파랑새야</li>
             </ul>
         </div>
+            <div style={{  position: 'fixed', top: 70, right: -100}}>
+                <img src='/images/anyang-map.jpg' alt='Anyang Map' style={{ width: '70%' }} />
+            </div>
+        </>
+
     )
 }
 
